@@ -1,0 +1,288 @@
+// Import variables Bootstrap's CSS
+@import "../../node_modules/bootstrap/scss/mixins/banner";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+ 
+$dark: hsl(233, 26%, 24%);
+$primary: hsl(136, 65%, 51%);
+$secondary:hsl(192, 70%, 51%);
+$success:  hsl(220, 16%, 96%);
+$info:hsl(233, 8%, 62%);
+$light: hsl(0, 0%, 98%);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 940px,
+  xl: 1050px,
+  xxl: 1130px 
+);
+
+
+*{
+  overflow-x: hidden;
+  font-family: 'Public Sans', sans-serif;
+  margin: 0;
+}
+
+.section-articles .row > *, 
+footer .row > *{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mt-74{
+  margin-top: 74px;
+}
+
+.banner .row > *{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#bg-intro-ft{
+  margin-top: -39px;    
+}
+
+article img{
+  max-height: 250px;
+  object-fit: cover !important;
+  width: 100%;
+}
+
+@media (min-width:500px) {
+  article img{
+    max-height: 300px;
+    width: 100%;
+  }
+}
+
+@media(min-width:600px){
+  article img{
+    max-height: 340px;
+  }
+}
+
+@media(min-width:768px){
+  article img{
+    max-height: 200px;
+  }
+}
+
+@media(min-width:1200px){
+  article img{
+    height: 190px !important;
+  }
+}
+
+.section-articles strong:hover{
+  color: $primary
+}
+
+.buttons-custom{
+  background-image: linear-gradient(to right, $primary, $secondary);
+  padding: 11px 38px;
+  outline: none;
+  border: none;
+}
+
+.ul-hover li a:hover{
+  color: $primary !important;
+}
+
+.box-icons svg:hover path {
+  fill: $primary;
+}
+
+.container-md{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.menu-custom{
+  height: 74px;
+}
+
+.menu-custom a{
+  position: relative;
+  line-height: 74px;
+}
+
+.menu-custom a:hover{
+  color: $dark !important;
+}
+
+.header-principal{
+  height: 74px;
+}
+
+.menu-custom a::before{
+  content: '';
+  width: calc(100% - 30px);
+  height: 0px;
+  background-image: linear-gradient(to right, $primary, $secondary);
+  position: absolute;
+  left: 15px;
+  bottom: -29px;
+}
+
+.menu-custom a:hover::before{
+  height: 3px;
+}
+
+
+@media(max-width:767px){
+  .header-principal{
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+  }
+
+  .menu-shadow{
+    position: fixed;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: calc(100vh - 74px);
+    padding-top: 20px;
+    z-index: 99;
+    background-image: linear-gradient(to bottom, hsla(233, 26%, 24%, 0.959),hsla(0, 0%, 98%, 0.466));
+  }
+  .menu-custom{
+    height: auto;
+    background-color: $light;
+    
+    margin: 0 auto;
+    padding: 23px;
+    width: 95%;
+    max-width: 430px;
+    min-width: 230px;
+    border-radius: 1%;
+  }
+
+  .menu-custom a::before{
+    content: '';
+    width: 0;
+    height: 0px;
+    background-image: linear-gradient(to right, $primary, $secondary);
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+  }
+
+  .menu-custom ul{
+    height: auto !important;
+  }
+
+  .menu-custom a{
+    position: relative;
+    line-height: 2.8;
+    display: block;
+    text-align: center;
+  }
+}
+
+
+// banner
+@media(min-width:768px){
+
+  #container-banner.row > * {
+    max-width: none !important;
+  }
+  
+  body .banner{
+    overflow: visible;
+  }
+
+  #container-banner{
+    position: relative;
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+
+  .mockups-box{
+    height: 900px;
+    width: 600px;
+
+    position: absolute;
+    top: 0;
+    right: 00px;
+    transform: translateX(50%);
+  }
+
+  .mockups-box > .box{
+    position: relative;
+    height: 100%;
+  }
+
+  
+  #bg-desktop{
+    position: absolute;
+    top: -285px; 
+    left: -30px;
+    //transform: translateX(50%);
+  }
+
+  #mockups-desk{
+    position: absolute;
+    top: -230px;
+    left: 70px;
+  }
+}
+
+@media(min-width:992px){
+  .mockups-box{
+    height: 900px;
+    width: 600px;
+
+    position: absolute;
+    top: 0;
+    right: 00px;
+    transform: translateX(40%);
+  }
+
+  #mockups-desk{
+    top: -125px;
+    left: 87px;
+  }
+
+}
+
+@media(min-width:1200px){
+  #mockups-desk{
+    left: 159px;
+  }
+}
+// banner end
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+$font-size-base:              .83rem;
+
+$font-size-sm:     $font-size-base * .65;
+$h1-font-size:     $font-size-base * 4;
+$h2-font-size:     $font-size-base * 2.8;
+$h5-font-size:     $font-size-base * 1.25; 
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,   
+  3: $h3-font-size, 
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+ 
+// Import all of Bootstrap's CSS  
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";  
